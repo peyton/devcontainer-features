@@ -1,0 +1,54 @@
+{
+    "name": "Foundry (unofficial)",
+    "id": "foundry",
+    "version": "0.0.1",
+    "description": "(unofficial) Installs foundry and its dependencies",
+    "options": {
+        "version": {
+            "default": "nightly",
+            "description": "Install a specific version.",
+            "proposals": [
+                "nightly"
+            ],
+            "type": "string"
+        },
+        "branch": {
+            "type": "string",
+            "default": "",
+            "proposals": [],
+            "description": "Install a specific branch."
+        },
+        "commit": {
+            "type": "string",
+            "default": "",
+            "proposals": [],
+            "description": "Install a specific commit."
+        },
+        "repo": {
+            "type": "string",
+            "default": "",
+            "proposals": [],
+            "description": "Install from a remote GitHub repo (uses default branch if no other options are set)."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/rust"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "JuanBlanco.solidity"
+            ],
+            "settings": {
+                "[solidity]": {
+                    "compileUsingRemoteVersion": "latest",
+                    "editor.defaultFormatter": "JuanBlanco.solidity",
+                    "formatter": "forge",
+                    "packageDefaultDependenciesContractsDirectory": "src",
+                    "packageDefaultDependenciesDirectory": "lib"
+                  }
+            }
+        }
+    }
+}

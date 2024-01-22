@@ -1,5 +1,5 @@
 {
-    "all": {
+    "specific_commit": {
         "image": "mcr.microsoft.com/devcontainers/base:jammy",
         "features": {
             "foundry": {
